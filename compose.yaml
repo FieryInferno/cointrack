@@ -1,0 +1,12 @@
+services:
+  cointrack:
+    image: cointrack
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 45486:5173
+    volumes:
+      - ./:/app
+      - /app/node_modules
+
