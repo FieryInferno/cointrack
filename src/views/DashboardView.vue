@@ -68,26 +68,28 @@
   });
 </script>
 <template>
-  <Menu />
-  <main class="content" style="flex:1; padding:20px; font-size:32px; font-weight:600;">
-    <header>
-      <h1>CoinTrack Dashboard</h1>
-    </header>
-    <div class="container">
-      <div class="card">
-        <h2>Pengeluaran per Kategori</h2>
-        <canvas id="categoryChart"></canvas>
+  <div class="wrapper">
+    <Menu />
+    <main class="content" style="flex:1; padding:20px; font-size:32px; font-weight:600;">
+      <header>
+        <h1>CoinTrack Dashboard</h1>
+      </header>
+      <div class="container">
+        <div class="card">
+          <h2>Pengeluaran per Kategori</h2>
+          <canvas id="categoryChart"></canvas>
+        </div>
+        <div class="card">
+          <h2>Spending Trend per Bulan</h2>
+          <canvas id="trendChart"></canvas>
+        </div>
+        <div class="card">
+          <h2>Rasio Income vs Expense</h2>
+          <canvas id="ratioChart"></canvas>
+        </div>
       </div>
-      <div class="card">
-        <h2>Spending Trend per Bulan</h2>
-        <canvas id="trendChart"></canvas>
-      </div>
-      <div class="card">
-        <h2>Rasio Income vs Expense</h2>
-        <canvas id="ratioChart"></canvas>
-      </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
 
 <style scoped>
@@ -96,6 +98,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+  }
+
+  @media (width >= 48rem) {
+    .wrapper {
+      display: flex;
+    }
   }
 
   main {
