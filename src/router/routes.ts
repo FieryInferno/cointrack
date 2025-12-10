@@ -1,14 +1,9 @@
 import DashboardView from '../views/DashboardView.vue'
 import LoginView from '../views/LoginView.vue'
+import TransactionsView from '../views/TransactionsView.vue'
+import SidebarLayout from '../views/SidebarLayout.vue'
 
-export default [
-  {
-    path: '/',
-    name: 'login',
-    component: LoginView,
-    meta: { title: 'Login - CoinTrack' },
-    showInMenu: false
-  },
+export const authenticatedRoutes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
@@ -20,7 +15,7 @@ export default [
   {
     path: '/transactions',
     name: 'Transactions',
-    component: DashboardView,
+    component: TransactionsView,
     meta: { title: 'Transactions - CoinTrack' },
     showInMenu: true,
     icon: '📒',
@@ -41,4 +36,9 @@ export default [
     showInMenu: true,
     icon: '⚙️',
   }
+]
+
+export default [
+  { path: '/', meta: { title: 'Login - CoinTrack' }, children: [{ path: '', component: LoginView }, { path: '/login', component: LoginView }] },
+  { path: '/', component: SidebarLayout, children: authenticatedRoutes },
 ]

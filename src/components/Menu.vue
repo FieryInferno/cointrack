@@ -1,6 +1,6 @@
 <script lang="ts" setup>
   import { useTemplateRef } from "vue";
-  import routes from "@/router/routes";
+  import { authenticatedRoutes} from "@/router/routes";
 
   const sidebar = useTemplateRef<HTMLDivElement>("sidebar");
   const toggleSidebar = () => sidebar.value.classList.toggle("collapsed")
@@ -8,7 +8,7 @@
 <template>
   <!-- Sidebar (Desktop) -->
   <div class="sidebar" id="sidebar" ref="sidebar">
-    <template v-for="route in routes" :key="route.name">
+    <template v-for="route in authenticatedRoutes" :key="route.name">
       <RouterLink :to="route.path" v-if="route.showInMenu" style="color: white; text-decoration: none;">
         <div class="menu-item">
           <span>{{ route.icon }}</span>
@@ -24,7 +24,7 @@
 
   <!-- Bottom Nav (Mobile) -->
   <div class="bottom-nav">
-    <template v-for="route in routes" :key="route.name">
+    <template v-for="route in authenticatedRoutes" :key="route.name">
       <RouterLink :to="route.path" v-if="route.showInMenu" style="color: white; text-decoration: none;">
         <div class="bottom-item">{{ route.icon }}</div>
       </RouterLink>

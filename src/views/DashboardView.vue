@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import Chart from "chart.js/auto";
   import { onMounted } from "vue";
-  import Menu from "@/components/Menu.vue";
   // --------------------------
   // Dummy data (bisa diganti nanti)
   // --------------------------
@@ -68,56 +67,34 @@
   });
 </script>
 <template>
-  <div class="wrapper">
-    <Menu />
-    <main class="content" style="flex:1; padding:20px; font-size:32px; font-weight:600;">
-      <header>
-        <h1>CoinTrack Dashboard</h1>
-      </header>
-      <div class="container">
-        <div class="card">
-          <h2>Pengeluaran per Kategori</h2>
-          <canvas id="categoryChart"></canvas>
-        </div>
-        <div class="card">
-          <h2>Spending Trend per Bulan</h2>
-          <canvas id="trendChart"></canvas>
-        </div>
-        <div class="card">
-          <h2>Rasio Income vs Expense</h2>
-          <canvas id="ratioChart"></canvas>
-        </div>
-      </div>
-    </main>
+  <header>
+    <h4>CoinTrack Dashboard</h4>
+  </header>
+  <div class="container">
+    <div class="card">
+      <h2>Pengeluaran per Kategori</h2>
+      <canvas id="categoryChart"></canvas>
+    </div>
+    <div class="card">
+      <h2>Spending Trend per Bulan</h2>
+      <canvas id="trendChart"></canvas>
+    </div>
+    <div class="card">
+      <h2>Rasio Income vs Expense</h2>
+      <canvas id="ratioChart"></canvas>
+    </div>
   </div>
 </template>
 
 <style scoped>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-  }
-
-  @media (width >= 48rem) {
-    .wrapper {
-      display: flex;
-    }
-  }
-
-  main {
-    background: #1a1a1a;
-    color: #fff;
-    min-height: 100vh;
-    padding-bottom: 40px;
-  }
-
   header {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     background: #242424;
     margin-bottom: 20px;
+  }
+  header h4 {
+    margin: 0;
   }
 
   .container {
