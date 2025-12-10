@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import Chart from "chart.js/auto";
   import { onMounted } from "vue";
+  import Menu from "@/components/Menu.vue";
   // --------------------------
   // Dummy data (bisa diganti nanti)
   // --------------------------
@@ -67,7 +68,8 @@
   });
 </script>
 <template>
-  <main>
+  <Menu />
+  <main class="content" style="flex:1; padding:20px; font-size:32px; font-weight:600;">
     <header>
       <h1>CoinTrack Dashboard</h1>
     </header>
@@ -129,8 +131,6 @@
 
   @media (width >= 48rem) {
     .container {
-      width: 90%;
-      margin: auto;
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .card {
