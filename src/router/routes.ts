@@ -1,29 +1,26 @@
-import DashboardView from '../views/DashboardView.vue'
-import LoginView from '../views/LoginView.vue'
-import TransactionsView from '../views/TransactionsView.vue'
-import SidebarLayout from '../views/SidebarLayout.vue'
-
 export const authenticatedRoutes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: DashboardView,
+    component: () => import('../views/DashboardView.vue'),
     meta: { title: 'Dashboard - CoinTrack' },
     showInMenu: true,
     icon: '🏠',
   },
   {
     path: '/transactions',
-    name: 'Transactions',
-    component: TransactionsView,
-    meta: { title: 'Transactions - CoinTrack' },
     showInMenu: true,
+    name: 'Transactions',
     icon: '📒',
+    children: [
+      { path: '', component: () => import('../views/TransactionsView.vue'), meta: { title: 'Transactions - CoinTrack' } },
+      { path: 'create', name: 'CreateTransaction', component: () => import('../views/CreateTransactionView.vue'), meta: { title: 'Create Transaction - CoinTrack' } }
+    ],
   },
   {
     path: '/analytics',
     name: 'Analytics',
-    component: DashboardView,
+    component: () => import('../views/DashboardView.vue'),
     meta: { title: 'Analytics - CoinTrack' },
     showInMenu: true,
     icon: '📊',
@@ -31,7 +28,7 @@ export const authenticatedRoutes = [
   {
     path: '/settings',
     name: 'Settings',
-    component: DashboardView,
+    component: () => import('../views/DashboardView.vue'),
     meta: { title: 'Settings - CoinTrack' },
     showInMenu: true,
     icon: '⚙️',
@@ -39,6 +36,10 @@ export const authenticatedRoutes = [
 ]
 
 export default [
-  { path: '/', meta: { title: 'Login - CoinTrack' }, children: [{ path: '', component: LoginView }, { path: '/login', component: LoginView }] },
-  { path: '/', component: SidebarLayout, children: authenticatedRoutes },
+  {
+    path: '/',
+    meta: { title: 'Login - CoinTrack' },
+    children: [{ path: '', component: () => import('../views/LoginView.vue') }, { path: '/login', component: () => import('../views/LoginView.vue') }]
+  },
+  { path: '/', component: () => import('../views/SidebarLayout.vue'), children: authenticatedRoutes },
 ]
