@@ -66,22 +66,31 @@
     margin-bottom: 25px;
   }
   label {
-  display: block;
-  margin-top: 10px;
-  font-size: 14px;
-}
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+  }
 
-input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  background: #222;
-  border: 1px solid #444;
-  border-radius: 8px;
-  color: white;
-}
-
-textarea {
-  height: 60px;
-}
+  input:required + label::after,
+  select:required + label::after,
+  textarea:required + label::after {
+    content: " *";
+    color: red;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+  }
+  label.required::after {
+    content: " *";
+    color: red;
+  }
+  textarea {
+    height: 60px;
+  }
 </style>

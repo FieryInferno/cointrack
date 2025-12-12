@@ -7,7 +7,7 @@
 </script>
 <template>
   <button @click="isClick = !isClick">+ Add Category</button>
-  <ModalAsync v-if="isClick" :titleButton="'+ Add Category'" :title="'Add New Category'" @close="isClick = false">
+  <ModalAsync v-if="isClick" :title="'Add New Category'" :show="isClick" @update:show="isClick = $event">
     <FormAddCategoryAsync v-if="isClick"/>
   </ModalAsync>
 </template>

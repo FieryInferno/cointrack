@@ -1,18 +1,17 @@
 <script lang="ts" setup>
-  import { ref, defineEmits } from 'vue';
-  defineProps<{ titleButton: string; title: string }>();
+  import { ref, defineEmits, defineProps, onMounted, onBeforeUnmount } from 'vue';
+  defineProps<{ title: string, show: boolean }>();
 
-  const emit = defineEmits(['close']);
+  const emit = defineEmits(['update:show']);
   const modal = ref<HTMLElement | null>(null);
-  const closeModal = () => {
-    if (modal.value) {
-      modal.value.style.display = 'none';
-      emit('close');
-    }
-  };
+  const closeModal = () => emit('update:show', false);
+  const onClickOutside = (event: MouseEvent) => { if (modal.value && event.target === modal.value) closeModal() };
+
+  onMounted(() => window.addEventListener('click', onClickOutside));
+  onBeforeUnmount(() => window.removeEventListener('click', onClickOutside));
 </script>
 <template>
-  <div class="modal" id="myModal" ref="modal" style="display: flex;">
+  <div class="modal" ref="modal" v-show="show">
     <div class="modal-content">
       <h2 class="modal-title" v-if="title">{{ title }}</h2>
       <span class="close" @click="closeModal">&times;</span>
@@ -23,7 +22,7 @@
 <style scoped>
   /* Background overlay */
   .modal {
-    display: none; 
+    display: flex;
     position: fixed;
     z-index: 10;
     left: 0;
