@@ -19,7 +19,10 @@
   <!-- Category List -->
   <div class="flex-container">
     <div class="flex-item category-section">
-      <h2 style="margin-bottom: 2rem;">Categories</h2>
+      <div style="display: flex; margin-bottom: 2rem; justify-content: space-between; align-items: center;">
+        <h2>Categories</h2>
+        <button id="addCategoryBtn">+ Add Category</button>
+      </div>
       <ul id="categoryList">
         <li class="category-item">Food</li>
         <li class="category-item">Transport</li>
@@ -28,7 +31,10 @@
       </ul>
     </div>
     <div class="flex-item transaction-list">
-      <h2 style="margin-bottom: 2rem;">All Transactions</h2>
+      <div style="display: flex; margin-bottom: 2rem; justify-content: space-between; align-items: center;">
+        <h2>All Transactions</h2>
+        <button>+ Add Transaction</button>
+      </div>
       <ul id="transactionList">
         <li class="transaction-item">
           2025-12-03 — Food <span class="amount income-color">+Rp 1</span><br><small>test</small>
@@ -98,7 +104,6 @@
   }
 
   button {
-    margin-top: 12px;
     padding: 10px 15px;
     background: #0066ff;
     border: none;
