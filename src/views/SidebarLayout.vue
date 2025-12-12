@@ -4,7 +4,7 @@
 <template>
   <div class="wrapper">
     <Menu />
-    <main class="content" style="flex:1; padding:20px; font-weight:600;">
+    <main class="content">
       <router-view />
     </main>
   </div>
@@ -22,6 +22,9 @@
     color: #fff;
     min-height: 100vh;
     padding-bottom: 40px;
+    flex:1;
+    padding:20px;
+    font-weight:600;
   }
   @media (width >= 48rem) {
     .wrapper {
