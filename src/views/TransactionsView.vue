@@ -1,3 +1,6 @@
+<script lang="ts" setup>
+  import ModalAddCategory from '@/components/ModalAddCategory.vue';
+</script>
 <template>
   <div class="container">
     <!-- Summary -->
@@ -21,7 +24,7 @@
     <div class="flex-item category-section">
       <div style="display: flex; margin-bottom: 2rem; justify-content: space-between; align-items: center;">
         <h2>Categories</h2>
-        <button id="addCategoryBtn">+ Add Category</button>
+        <ModalAddCategory />
       </div>
       <ul id="categoryList">
         <li class="category-item">Food</li>
@@ -101,19 +104,6 @@
 
   textarea {
     height: 60px;
-  }
-
-  button {
-    padding: 10px 15px;
-    background: #0066ff;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-  }
-
-  button:hover {
-    opacity: 0.8;
   }
 
   .submit-btn {
