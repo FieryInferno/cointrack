@@ -20,7 +20,7 @@ export const authenticatedRoutes = [
   {
     path: '/analytics',
     name: 'Analytics',
-    component: () => import('../views/DashboardView.vue'),
+    component: () => import('../views/AnalyticsView.vue'),
     meta: { title: 'Analytics - CoinTrack' },
     showInMenu: true,
     icon: '📊',
