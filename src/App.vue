@@ -50,4 +50,38 @@
   }
   /* tiny focus styles */
   input:focus, select:focus, textarea:focus{outline:2px solid rgba(124,58,237,0.12);box-shadow:0 0 0 4px rgba(124,58,237,0.06)}
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .form-section,
+  .card {
+    background: #1b1b1b;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    margin-bottom: 25px;
+  }
+  label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: white;
+}
+
+textarea {
+  height: 60px;
+}
 </style>

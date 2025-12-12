@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import ModalAddCategory from '@/components/ModalAddCategory.vue';
+  import ButtonAddCategory from '@/components/ButtonAddCategory.vue';
 </script>
 <template>
   <div class="container">
@@ -21,10 +21,10 @@
   </div>
   <!-- Category List -->
   <div class="flex-container">
-    <div class="flex-item category-section">
+    <div class="flex-item card">
       <div style="display: flex; margin-bottom: 2rem; justify-content: space-between; align-items: center;">
         <h2>Categories</h2>
-        <ModalAddCategory />
+        <ButtonAddCategory />
       </div>
       <ul id="categoryList">
         <li class="category-item">Food</li>
@@ -33,10 +33,12 @@
         <li class="category-item">test</li>
       </ul>
     </div>
-    <div class="flex-item transaction-list">
+    <div class="flex-item card">
       <div style="display: flex; margin-bottom: 2rem; justify-content: space-between; align-items: center;">
         <h2>All Transactions</h2>
-        <button>+ Add Transaction</button>
+        <RouterLink to="/transactions/create">
+          <button>+ Add Transaction</button>
+        </RouterLink>
       </div>
       <ul id="transactionList">
         <li class="transaction-item">
@@ -47,19 +49,13 @@
   </div>
 </template>
 <style scoped>
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-  }
-
   .summary {
     display: flex;
     gap: 15px;
     margin-bottom: 25px;
   }
 
-  .card {
+  .summary .card {
     flex: 1;
     background: #1b1b1b;
     padding: 20px;
@@ -74,16 +70,6 @@
 
   .card.expense p {
     color: #ff5252;
-  }
-
-  .form-section,
-  .category-section,
-  .transaction-list {
-    background: #1b1b1b;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #333;
-    margin-bottom: 25px;
   }
 
   label {
