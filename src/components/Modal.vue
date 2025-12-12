@@ -1,18 +1,21 @@
 <script lang="ts" setup>
-  import { ref } from 'vue';
+  import { ref, defineEmits } from 'vue';
   defineProps<{ titleButton: string; title: string }>();
 
+  const emit = defineEmits(['close']);
   const modal = ref<HTMLElement | null>(null);
-  const showModal = (show: boolean) => {
-    if (modal.value) modal.value.style.display = show ? 'flex' : 'none';
+  const closeModal = () => {
+    if (modal.value) {
+      modal.value.style.display = 'none';
+      emit('close');
+    }
   };
 </script>
 <template>
-  <button @click="() => showModal(true)">{{ titleButton }}</button>
-  <div class="modal" id="myModal" ref="modal" style="display: none;">
+  <div class="modal" id="myModal" ref="modal" style="display: flex;">
     <div class="modal-content">
       <h2 class="modal-title" v-if="title">{{ title }}</h2>
-      <span class="close" @click="() => showModal(false)">&times;</span>
+      <span class="close" @click="closeModal">&times;</span>
       <slot></slot>
     </div>
   </div>
