@@ -1,0 +1,27 @@
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.category-item {
+  background: #222;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-bottom: 10px;
+}
+.category-limit {
+  font-size: 14px;
+}
+.category-item .over-limit {
+  color: var(--danger);
+  accent-color: var(--danger);
+}
+.category-item .save {
+  color: var(--success);
+  accent-color: var(--success);
+}
+.category-item .near-limit {
+  color: var(--warning);
+  accent-color: var(--warning);
+}

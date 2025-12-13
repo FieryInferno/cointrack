@@ -5,6 +5,8 @@
   --accent:#7c3aed;
   --glass: rgba(255,255,255,0.03);
   --success: #4cae50;
+  --danger: #f44336;
+  --warning: #ff9800;
 }
 body {
   margin: 0;
