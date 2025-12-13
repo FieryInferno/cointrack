@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { ref, defineEmits, defineProps, onMounted, onBeforeUnmount } from 'vue';
+  import { ref, onMounted, onBeforeUnmount } from 'vue';
   defineProps<{ title: string, show: boolean }>();
 
   const emit = defineEmits(['update:show']);

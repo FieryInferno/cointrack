@@ -1,5 +1,6 @@
 <script lang="ts" setup>
   import ButtonAddCategory from '@/components/ButtonAddCategory.vue';
+  import ListCategories from '@/components/ListCategories.vue';
 </script>
 <template>
   <div class="container">
@@ -26,12 +27,7 @@
         <h2>Categories</h2>
         <ButtonAddCategory />
       </div>
-      <ul id="categoryList">
-        <li class="category-item">Food</li>
-        <li class="category-item">Transport</li>
-        <li class="category-item">Shopping</li>
-        <li class="category-item">test</li>
-      </ul>
+      <ListCategories />
     </div>
     <div class="flex-item card">
       <div style="display: flex; margin-bottom: 2rem; justify-content: space-between; align-items: center;">
@@ -102,8 +98,7 @@
     padding: 0;
   }
 
-  .transaction-item,
-  .category-item {
+  .transaction-item {
     background: #222;
     padding: 12px;
     border-radius: 8px;
