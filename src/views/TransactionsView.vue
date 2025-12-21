@@ -5,23 +5,21 @@
   import ListCategories from '@/components/ListCategories.vue';
 </script>
 <template>
-  <div class="container">
-    <!-- Summary -->
-    <section class="summary">
-      <div class="card">
-        <h2>Total Balance</h2>
-        <p id="totalBalance">Rp 0</p>
-      </div>
-      <div class="card income">
-        <h2>Total Income</h2>
-        <p id="totalIncome">Rp 0</p>
-      </div>
-      <div class="card expense">
-        <h2>Total Expense</h2>
-        <p id="totalExpense">Rp 0</p>
-      </div>
-    </section>
-  </div>
+  <!-- Summary -->
+  <section class="summary">
+    <div class="card">
+      <h2>Total Balance</h2>
+      <p id="totalBalance">Rp 0</p>
+    </div>
+    <div class="card income">
+      <h2>Total Income</h2>
+      <p id="totalIncome">Rp 0</p>
+    </div>
+    <div class="card expense">
+      <h2>Total Expense</h2>
+      <p id="totalExpense">Rp 0</p>
+    </div>
+  </section>
   <!-- Category List -->
   <div class="flex-container">
     <div class="flex-item card category-list">

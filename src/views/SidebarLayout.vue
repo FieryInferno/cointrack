@@ -25,6 +25,7 @@
     flex:1;
     padding:20px;
     font-weight:600;
+    margin-bottom: 2rem;
   }
   @media (width >= 48rem) {
     .wrapper {
