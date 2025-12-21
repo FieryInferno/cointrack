@@ -21,11 +21,19 @@
       <input type="file" id="receipt" accept="image/*">
 
       <button class="submit-btn" id="saveTransaction">Save Transaction</button>
+      <RouterLink to="/transactions">
+        <button class="cancel-btn" id="cancelTransaction">Cancel</button>
+      </RouterLink>
     </section>
   </div>
 </template>
 <style>
   button {
     margin-top: 12px;
+  }
+  .cancel-btn {
+    margin-left: 8px;
+    background-color: #ccc;
+    color: #333;
   }
 </style>
