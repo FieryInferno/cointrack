@@ -1,24 +1,20 @@
 <script lang="ts" setup>
-  import { ref } from 'vue';
   import ButtonEditCategory from './ButtonEditCategory.vue';
   import formatRupiah from '@/utils/format-rupiah.util';
+  import CategoryEntity from '@/entities/category.entity';
 
-  const categories = ref([
-    { name: 'Food', limit: 1500000, total: 500000, percentage: 33 },
-    { name: 'Transport', limit: 500000, total: 200000, percentage: 40 },
-    { name: 'Shopping', limit: 1000000, total: 1750000, percentage: 175 },
-    { name: 'test', limit: 0, total: 1000000, percentage: 0 }
-  ]);
+  const props = defineProps<{ categories: CategoryEntity[] }>();
   const limitClass = (percentage: number) => {
     if (percentage >= 100) return 'over-limit';
     if (percentage < 80) return 'save';
     if (percentage >= 80 && percentage < 100) return 'near-limit';
+
     return '';
   };
 </script>
 <template>
   <ul id="categoryList">
-    <li v-for="{ limit, total, percentage, ...category } in categories" :key="category.name" class="category-item">
+    <li v-for="{ limit, total, percentage, ...category } in props.categories" :key="category.name" class="category-item">
       <div>
         <div>{{ category.name }}</div>
         <div
@@ -40,6 +36,4 @@
     </li>
   </ul>
 </template>
-<style scoped>
-  @import './ListCategory.style.css';
-</style>
+<style scoped>@import './ListCategory.style.css';</style>
