@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-  import ButtonAddCategory from '@/components/ButtonAddCategory.vue';
-  import ListCategoriesWithGetData from '@/components/ListCategoriesWithGetData.vue';
-  import categoryService from '@/services/category.service';
-  import ListCategories from '@/components/ListCategories.vue';
+import ButtonAddCategory from '@/components/ButtonAddCategory.vue'
+import ListCategoriesWithGetData from '@/components/ListCategoriesWithGetData.vue'
+import categoryService from '@/services/category.service'
+import ListCategories from '@/components/ListCategories.vue'
 </script>
 <template>
   <!-- Summary -->
@@ -23,7 +23,14 @@
   <!-- Category List -->
   <div class="flex-container">
     <div class="flex-item card category-list">
-      <div style="display: flex; margin-bottom: 2rem; justify-content: space-between; align-items: center;">
+      <div
+        style="
+          display: flex;
+          margin-bottom: 2rem;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
         <h2>Categories</h2>
         <ButtonAddCategory />
       </div>
@@ -37,7 +44,14 @@
       </Suspense>
     </div>
     <div class="flex-item card">
-      <div style="display: flex; margin-bottom: 2rem; justify-content: space-between; align-items: center;">
+      <div
+        style="
+          display: flex;
+          margin-bottom: 2rem;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
         <h2>All Transactions</h2>
         <RouterLink to="/transactions/create">
           <button>+ Add Transaction</button>
@@ -45,12 +59,13 @@
       </div>
       <ul id="transactionList">
         <li class="transaction-item">
-          2025-12-03 — Food <span class="amount income-color">+Rp 1</span><br><small>test</small>
+          2025-12-03 — Food <span class="amount income-color">+Rp 1</span
+          ><br /><small>test</small>
         </li>
       </ul>
     </div>
   </div>
 </template>
 <style scoped>
-  @import './TransactionsView.style.css';
+@import './TransactionsView.style.css';
 </style>

@@ -5,7 +5,7 @@ export const authenticatedRoutes = [
     component: () => import('../presentation/dashboard.view.vue'),
     meta: { title: 'Dashboard - CoinTrack' },
     showInMenu: true,
-    icon: '🏠',
+    icon: '🏠'
   },
   {
     path: '/transactions',
@@ -13,9 +13,18 @@ export const authenticatedRoutes = [
     name: 'Transactions',
     icon: '📒',
     children: [
-      { path: '', component: () => import('../presentation/TransactionsView.vue'), meta: { title: 'Transactions - CoinTrack' } },
-      { path: 'create', name: 'CreateTransaction', component: () => import('../presentation/CreateTransactionView.vue'), meta: { title: 'Create Transaction - CoinTrack' } }
-    ],
+      {
+        path: '',
+        component: () => import('../presentation/TransactionsView.vue'),
+        meta: { title: 'Transactions - CoinTrack' }
+      },
+      {
+        path: 'create',
+        name: 'CreateTransaction',
+        component: () => import('../presentation/CreateTransactionView.vue'),
+        meta: { title: 'Create Transaction - CoinTrack' }
+      }
+    ]
   },
   {
     path: '/analytics',
@@ -23,7 +32,7 @@ export const authenticatedRoutes = [
     component: () => import('../presentation/AnalyticsView.vue'),
     meta: { title: 'Analytics - CoinTrack' },
     showInMenu: true,
-    icon: '📊',
+    icon: '📊'
   },
   {
     path: '/settings',
@@ -31,7 +40,7 @@ export const authenticatedRoutes = [
     component: () => import('../presentation/dashboard.view.vue'),
     meta: { title: 'Settings - CoinTrack' },
     showInMenu: true,
-    icon: '⚙️',
+    icon: '⚙️'
   }
 ]
 
@@ -39,7 +48,17 @@ export default [
   {
     path: '/',
     meta: { title: 'Login - CoinTrack' },
-    children: [{ path: '', component: () => import('../presentation/login.view.vue') }, { path: '/login', component: () => import('../presentation/login.view.vue') }]
+    children: [
+      { path: '', component: () => import('../presentation/LoginView.vue') },
+      {
+        path: '/login',
+        component: () => import('../presentation/LoginView.vue')
+      }
+    ]
   },
-  { path: '/', component: () => import('../presentation/SidebarLayout.vue'), children: authenticatedRoutes },
+  {
+    path: '/',
+    component: () => import('../presentation/SidebarLayout.vue'),
+    children: authenticatedRoutes
+  }
 ]

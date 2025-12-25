@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import ButtonCategory from './ButtonCategory.vue';
+import ButtonCategory from './ButtonCategory.vue'
 </script>
 
 <template>
