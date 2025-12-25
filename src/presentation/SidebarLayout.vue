@@ -31,5 +31,8 @@
     .wrapper {
       display: flex;
     }
+    main {
+      margin-bottom: 0;
+    }
   }
 </style>

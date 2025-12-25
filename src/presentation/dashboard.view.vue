@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import Chart from "chart.js/auto";
+  import WarningLimit from "@/components/WarningLimit.vue";
   import { onMounted } from "vue";
   // --------------------------
   // Dummy data (bisa diganti nanti)
@@ -70,65 +71,27 @@
   <header>
     <h4>CoinTrack Dashboard</h4>
   </header>
-  <div class="container">
-    <div class="card">
-      <h2>Pengeluaran per Kategori</h2>
-      <canvas id="categoryChart"></canvas>
+  <div >
+    <div :style="{ 'margin-bottom': '1rem' }">
+      <WarningLimit />
     </div>
-    <div class="card">
-      <h2>Spending Trend per Bulan</h2>
-      <canvas id="trendChart"></canvas>
-    </div>
-    <div class="card">
-      <h2>Rasio Income vs Expense</h2>
-      <canvas id="ratioChart"></canvas>
+    <div class="container">
+      <div class="card">
+        <h2>Pengeluaran per Kategori</h2>
+        <canvas id="categoryChart"></canvas>
+      </div>
+      <div class="card">
+        <h2>Spending Trend per Bulan</h2>
+        <canvas id="trendChart"></canvas>
+      </div>
+      <div class="card">
+        <h2>Rasio Income vs Expense</h2>
+        <canvas id="ratioChart"></canvas>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-  header {
-    padding: 10px;
-    text-align: center;
-    background: #242424;
-    margin-bottom: 20px;
-  }
-  header h4 {
-    margin: 0;
-  }
-
-  .container {
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .card {
-    width: 20rem;
-    margin: auto;
-    background: #2a2a2a;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    min-height: 100%;
-  }
-
-  @media (width >= 48rem) {
-    .container {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    .card {
-      width: 100%;
-      margin: auto;
-    }
-  }
-
-  .card h2 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-  }
+  @import './styles/dashboard.style.css';
 </style>
