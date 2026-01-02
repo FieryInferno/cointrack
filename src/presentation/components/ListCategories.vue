@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import ButtonEditCategory from './ButtonEditCategory.vue'
-import formatRupiah from '@/utils/format-rupiah.util'
+import formatRupiah from '@/shared/utils/format-rupiah.util'
 import CategoryEntity from '@/entities/category.entity'
 
 const props = defineProps<{ categories: CategoryEntity[] }>()

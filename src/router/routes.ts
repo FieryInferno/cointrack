@@ -2,7 +2,7 @@ export const authenticatedRoutes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: () => import('../presentation/dashboard.view.vue'),
+    component: () => import('../presentation/DashboardView.vue'),
     meta: { title: 'Dashboard - CoinTrack' },
     showInMenu: true,
     icon: '🏠'
@@ -37,7 +37,7 @@ export const authenticatedRoutes = [
   {
     path: '/settings',
     name: 'Settings',
-    component: () => import('../presentation/dashboard.view.vue'),
+    component: () => import('../presentation/DashboardView.vue'),
     meta: { title: 'Settings - CoinTrack' },
     showInMenu: true,
     icon: '⚙️'
